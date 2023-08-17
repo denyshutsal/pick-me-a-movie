@@ -1,0 +1,28 @@
+/* bootstrap reboot (included) */
+@import "./reset.css";
+
+:root {
+  --main-clr: #fff;
+  --main-bg-clr: #fff;
+  --links-clr: #fff;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  color: var(--main-clr);
+  background-color: var(--main-bg-clr);
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-header {
+  height: 64px;
+  background-color: #032541;
+}
