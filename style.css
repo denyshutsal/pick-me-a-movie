@@ -4,7 +4,6 @@
 :root {
   --main-clr: #fff;
   --main-bg-clr: #fff;
-  --links-clr: #fff;
 }
 
 html {
@@ -24,5 +23,57 @@ a {
 
 .main-header {
   height: 64px;
-  background-color: #032541;
+}
+
+.navbar {
+  background-color: #032541 !important;
+}
+
+.navbar-brand {
+  color: #1ab7d8 !important;
+  margin-right: 15px;
+}
+
+.navbar-brand::after {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 14px;
+  background-color: #1ab7d8;
+  border-radius: 15px;
+  margin-left: 5px;
+}
+
+.navbar-toggler:hover {
+  border: 1px solid #1ab7d8;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%231ab7d8' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.btn-outline-primary {
+  color: #1ab7d8;
+  border-color: #1ab7d8;
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:hover {
+  color: #1ab7d8;
+  border-color: #1ab7d8;
+  background-color: #fff;
+}
+
+.nav-link:active,
+.nav-link:hover {
+  color: #1ab7d8 !important;
+}
+
+.scrolled-down {
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+.scrolled-up {
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
 }

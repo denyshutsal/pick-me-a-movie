@@ -17,19 +17,16 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <script src="main.js" defer></script>
-    <link rel="stylesheet" href="style.css" />
+    <script src="./main.js" defer></script>
+    <script src="./scroll.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
     <title>The Final Front-end Project</title>
   </head>
   <body>
-    <!-- Наш API можно использовать бесплатно в некоммерческих целях, если вы указываете TMDB в качестве источника данных и/или изображений. -->
-    <!-- What are the attribution requirements?
-You shall use the TMDB logo to identify your use of the TMDB APIs. You shall place the following notice prominently on your application: "This product uses the TMDB API but is not endorsed or certified by TMDB." -->
-    <!-- https://www.themoviedb.org/about/logos-attribution -->
     <header class="main-header">
-      <nav class="navbar navbar-expand-md fixed-top">
+      <nav class="navbar navbar-expand-md fixed-top autohide">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">PMM</a>
+          <a class="navbar-brand text-light" href="index.html">PMM</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -44,18 +41,21 @@ You shall use the TMDB logo to identify your use of the TMDB APIs. You shall pla
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="#"
                   >Movies</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">TV Shows</a>
+                <a class="nav-link text-light" href="#">TV Shows</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">People</a>
+                <a class="nav-link text-light" href="#">People</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">More</a>
+                <a class="nav-link text-light" href="#">More</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -65,7 +65,7 @@ You shall use the TMDB logo to identify your use of the TMDB APIs. You shall pla
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button class="btn btn-outline-primary" type="submit">
                 Search
               </button>
             </form>
@@ -73,6 +73,7 @@ You shall use the TMDB logo to identify your use of the TMDB APIs. You shall pla
         </div>
       </nav>
     </header>
+    <!-- end header -->
 
     <!-- jquery js -->
     <script
