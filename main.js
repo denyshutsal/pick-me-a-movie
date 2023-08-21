@@ -5,6 +5,15 @@ const requestInput = document.querySelector("#request-input");
 const ul = document.querySelector("#results");
 const mainTitle = document.querySelector(".main-title");
 
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMjg4NjY3NzgzZmEwZmRhOWMwNGQ0NDhjNzNlZWRmNCIsInN1YiI6IjY0ZGNiZGU3MDAxYmJkMDQxOTJkNjg3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RiKCIZZhjGYUzJhJsmeyM97iFaOd3VVRvtRHTeqROeA",
+  },
+};
+
 // Displaying search results
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -22,15 +31,6 @@ function fetchData() {
   }
 
   const url = `https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`;
-
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMjg4NjY3NzgzZmEwZmRhOWMwNGQ0NDhjNzNlZWRmNCIsInN1YiI6IjY0ZGNiZGU3MDAxYmJkMDQxOTJkNjg3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RiKCIZZhjGYUzJhJsmeyM97iFaOd3VVRvtRHTeqROeA",
-    },
-  };
 
   fetch(url, options)
     .then((response) => response.json())
@@ -73,15 +73,6 @@ function fetchData() {
 
 // Default Output - Trends
 const url = `https://api.themoviedb.org/3/trending/movie/week?language=en-US`;
-
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMjg4NjY3NzgzZmEwZmRhOWMwNGQ0NDhjNzNlZWRmNCIsInN1YiI6IjY0ZGNiZGU3MDAxYmJkMDQxOTJkNjg3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RiKCIZZhjGYUzJhJsmeyM97iFaOd3VVRvtRHTeqROeA",
-  },
-};
 
 fetch(url, options)
   .then((response) => response.json())
