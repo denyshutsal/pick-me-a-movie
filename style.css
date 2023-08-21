@@ -2,7 +2,7 @@
 @import "./reset.css";
 
 :root {
-  --main-clr: #fff;
+  --main-clr: #000;
   --main-bg-clr: #fff;
 }
 
@@ -73,14 +73,15 @@ a {
   transform: translateY(0);
   transition: all 0.3s ease-in-out;
 }
-
 /* end header */
+
 .hero {
   background-color: #1ab7d8;
   background-image: url(img/hero-croped.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-bottom: 20px;
 }
 
 .hero-container {
@@ -100,6 +101,7 @@ a {
 .hero-title {
   font-size: 32px;
   font-weight: 600;
+  color: #fff;
 }
 
 .input-wrapper {
@@ -138,4 +140,66 @@ a {
 ::placeholder {
   font-size: 16px;
   color: #c6c6c6;
+}
+/* end hero */
+
+.main-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+#results {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 20px;
+  padding-inline-start: 0;
+}
+
+.results-li {
+  width: 150px;
+}
+
+.results-img-wrapper {
+  width: 150px;
+  height: 225px;
+  margin-bottom: 10px;
+}
+
+.results-img {
+  border-radius: 10px;
+}
+
+.noposter {
+  background-color: #dbdbdb;
+  background-image: url(./img/image-not-found-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.results-title,
+.results-date {
+  font-size: 16px;
+}
+
+.results-title {
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.results-date {
+  color: #0009;
+}
+/* end results */
+
+.footer {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #032541;
+  color: #fff;
 }
