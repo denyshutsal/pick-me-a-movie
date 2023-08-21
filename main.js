@@ -5,6 +5,7 @@ const requestInput = document.querySelector("#request-input");
 const ul = document.querySelector("#results");
 const mainTitle = document.querySelector(".main-title");
 
+// Displaying search results
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -13,6 +14,12 @@ submitBtn.addEventListener("click", function (e) {
 
 function fetchData() {
   let title = requestInput.value;
+
+  if (!title) {
+    mainTitle.innerHTML = "There are no movies that matched your query.";
+    ul.innerHTML = "";
+    return;
+  }
 
   const url = `https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`;
 
@@ -61,9 +68,10 @@ function fetchData() {
       console.log(error);
     });
 }
-
+// end Displaying search results
 // --------------------------------------------------------------------------------------
 
+// Default Output - Trends
 const url = `https://api.themoviedb.org/3/trending/movie/week?language=en-US`;
 
 const options = {
@@ -86,14 +94,19 @@ fetch(url, options)
       const day = d.getDay();
       const month = d.toLocaleString("default", { month: "long" });
 
+      const isPoster = item.poster_path;
+      const isDate = item.release_date ? `${month} ${day}, ${year}` : `No date`;
+
       ul.innerHTML += `
       <li class="results-li">
-        <div class="results-img-wrapper">
-          <img class="results-img" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="${item.title}" width='150' height='225'>
+      <div class="results-img-wrapper ${!isPoster ? "noposter" : ""}">
+          <img class="results-img" src="https://image.tmdb.org/t/p/w500${
+            item.poster_path
+          }" alt="${item.title}" width='150' height='225'>
         </div>
         <div>
           <h3 class="results-title">${item.title}</h3>
-          <span class="results-date">${month} ${day}, ${year}</span>
+          <span class="results-date">${isDate}</span>
         </div>
       </li>`;
     });
